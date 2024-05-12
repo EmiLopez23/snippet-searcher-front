@@ -28,9 +28,7 @@ export default function SnippetCard({
     });
   };
 
-  const handleClick = () => {
-    
-  }
+  const handleClick = () => {};
 
   return (
     <div
@@ -42,17 +40,15 @@ export default function SnippetCard({
           "--circle-y": `${position.y}px`,
         } as React.CSSProperties
       }
-      className="card"
+      className="card grid grid-cols-2 grid-rows-2 items-center p-5 font-inter text-sm text-white"
     >
-      <div className="card-content grid grid-cols-2 grid-rows-2 items-center border-none p-4 font-inter text-sm text-white">
-        <h2 className="text-xl font-bold">{name}</h2>
-        <p className={`${complianceColors[compliance]} text-end capitalize`}>
-          {compliance}
-        </p>
-        <p className="col-span-full max-w-[380px] overflow-hidden text-ellipsis text-nowrap text-ds-gray-600">
-          {content}
-        </p>
-      </div>
+      <h2 className="text-xl font-bold">{name}</h2>
+      <p className={`${complianceColors[compliance]} text-end capitalize`}>
+        {compliance}
+      </p>
+      <p className="col-span-full max-w-[380px] overflow-hidden text-ellipsis text-nowrap text-ds-gray-600">
+        {content}
+      </p>
     </div>
   );
 }

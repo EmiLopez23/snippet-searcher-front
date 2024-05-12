@@ -94,32 +94,29 @@ h1 > span::before {
   opacity: 1;
 }
 
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--circle-x) var(--circle-y),
-    rgba(255, 255, 255, 0.06),
-    transparent 40%
-  );
-  z-index: 3;
+.card {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #171717;
 }
 
-.card:hover::before,
+.card:hover {
+  background:
+    linear-gradient(rgb(23, 23, 23) 0 0) padding-box,
+    radial-gradient(
+        800px circle at var(--circle-x) var(--circle-y),
+        #007cf09d,
+        rgba(255, 255, 255, 0.1) 40%
+      )
+      border-box;
+}
+
 .card:hover::after {
   opacity: 1;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  display: flex;
-  height: 98px;
-  flex-direction: column;
-  position: relative;
-  width: 420px;
-  border-radius: 8px;
-}
-
-.card::before,
 .card::after {
   border-radius: inherit;
   content: "";
@@ -130,22 +127,10 @@ h1 > span::before {
   top: 0px;
   transition: opacity 500ms;
   width: 100%;
-}
-
-.card::after {
   background: radial-gradient(
     800px circle at var(--circle-x) var(--circle-y),
-    #007cf09d,
+    rgba(255, 255, 255, 0.06),
     transparent 40%
   );
   z-index: 1;
-}
-
-.card-content {
-  background-color: rgb(23, 23, 23);
-  border-radius: 6px;
-  flex-grow: 1;
-  inset: 2px;
-  position: absolute;
-  z-index: 2;
 }

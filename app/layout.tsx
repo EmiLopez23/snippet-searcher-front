@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 const inter = Inter({ subsets: ["latin"] });
 const shareTechMono = Share_Tech_Mono({
@@ -20,8 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${shareTechMono.className} overflow-x-hidden`}>
-        {children}
+      <body className={`${shareTechMono.className} overflow-hidden`}>
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   );

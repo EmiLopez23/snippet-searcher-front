@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
     "@codemirror/lang-javascript": "^6.2.2",
     "@geist-ui/icons": "^1.0.2",
     "@uiw/codemirror-theme-tokyo-night": "^4.21.25",
